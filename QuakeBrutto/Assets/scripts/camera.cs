@@ -9,10 +9,16 @@ public class camera : MonoBehaviour
     float xRotation = 0f;
     public float sensitivity = 10f; //sensibilità
 
+    void Start() 
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void FixedUpdate() //aggiorna a ogni frame
     {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+
         xRotation -= mouseY;
         xRotation = Mathf.Clamp (xRotation, -90f, 90f);
 

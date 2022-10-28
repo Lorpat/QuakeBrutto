@@ -8,7 +8,7 @@ public class movement_2 : MonoBehaviour
 {
     
     public Rigidbody rb;
-    public float speed = 5f;
+    public float speed = 10f;
     public float sensitivity = 10f;
     public float distance = 1f;
 
@@ -28,12 +28,11 @@ public class movement_2 : MonoBehaviour
         //multiplied by deltaTime and speed for a smooth MovePosition
         //rb.MovePosition(transform.position + m_Input * Time.deltaTime * speed);
         
-
         if (Input.GetKey(KeyCode.S)) transform.position = transform.position - Camera.main.transform.forward * distance * Time.deltaTime; // indietro
         if (Input.GetKey(KeyCode.W)) transform.position = transform.position + Camera.main.transform.forward * distance * Time.deltaTime; // avanti
         if (Input.GetKey(KeyCode.D)) transform.position = transform.position + Camera.main.transform.right * distance * Time.deltaTime; // destra
         if (Input.GetKey(KeyCode.A)) transform.position = transform.position - Camera.main.transform.right * distance * Time.deltaTime; // sinistra
-
+       
         float rotateHorizontal = Input.GetAxis("Mouse X");
         transform.Rotate(0, rotateHorizontal * sensitivity, 0);
     }
