@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 336804710}
   - component: {fileID: 336804717}
   - component: {fileID: 336804716}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1030,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133265971}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: posizione DOOM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 4790935339988041795}
   - component: {fileID: 2083930613557886251}
   - component: {fileID: 8333946102511064614}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1429,7 +1429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653373124543}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 2415282356614485609}
   - component: {fileID: 2819875040496529812}
   - component: {fileID: 666755582207905744}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 3160042425271909483}
   - component: {fileID: 1559424445165455829}
   - component: {fileID: 6490597183766746921}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Clip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1719,7 +1719,7 @@ GameObject:
   - component: {fileID: 8634508792880611316}
   - component: {fileID: 5871204228690345682}
   - component: {fileID: 1074077701905626631}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1737,7 +1737,7 @@ GameObject:
   - component: {fileID: 60499632349467962}
   - component: {fileID: 4502360454686299213}
   - component: {fileID: 2606786136076917687}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_FusionSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1919,7 +1919,7 @@ GameObject:
   - component: {fileID: 3950678921939375322}
   - component: {fileID: 283969508998623595}
   - component: {fileID: 2835120003464633414}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Clip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

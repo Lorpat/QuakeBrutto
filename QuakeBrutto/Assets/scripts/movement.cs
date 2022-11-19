@@ -24,15 +24,8 @@ public class movement : MonoBehaviour
         characterController = gameObject.GetComponent<CharacterController>();
     }
 
-    void FixedUpdate()
+    void Update() 
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // per controllare se il player tocca terra
-
-        if (isGrounded && velocity.y < 0f) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
-        {                                   // si setta a -2f perché è meglio di 0f
-            velocity.y = -2f;
-        }
-        
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -44,9 +37,18 @@ public class movement : MonoBehaviour
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); // formula fisica per determinare la velocità necessaria a compiere un salto di una certa altezza
         }
-        
+    }
+
+    void FixedUpdate()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // per controllare se il player tocca terra
+
+        if (isGrounded && velocity.y < 0f) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
+        {                                   // si setta a -2f perché è meglio di 0f
+            velocity.y = -2f;
+        }
+
         velocity.y += gravity * Time.deltaTime; // moto uniformemente accelerato
-        
         characterController.Move(velocity * Time.deltaTime);
     }
 }
