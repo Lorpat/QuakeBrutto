@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,11 +28,11 @@ public class movement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // per controllare se il player tocca terra
 
-        if (isGrounded && velocity.y < 0f) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
+        if (isGrounded && velocity.y < 0) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
         {                                   // si setta a -2f perché è meglio di 0f
             velocity.y = -2f;
         }
-
+        
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
