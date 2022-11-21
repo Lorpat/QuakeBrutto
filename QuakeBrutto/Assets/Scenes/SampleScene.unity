@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 336804710}
   - component: {fileID: 336804717}
   - component: {fileID: 336804716}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336804708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.32, z: 0}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -240,7 +240,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -256,9 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068d34b96ee4e284396bfcbbdbbc5cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterController: {fileID: 0}
+  characterController: {fileID: 336804716}
   speed: 8
-  gravity: -125
+  gravity: -19.62
   groundCheck: {fileID: 1294948118}
   groundDistance: 0.4
   groundMask:
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -716,9 +716,9 @@ GameObject:
   - component: {fileID: 987481113}
   - component: {fileID: 987481112}
   - component: {fileID: 987481111}
-  - component: {fileID: 987481110}
   - component: {fileID: 987481109}
-  m_Layer: 0
+  - component: {fileID: 987481114}
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,19 +942,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!65 &987481110
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987481108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &987481111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1020,6 +1007,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &987481114
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987481108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2072868008}
 --- !u!1 &1133265970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133265971}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: posizione DOOM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1149,7 +1150,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-5566
+  m_Name: pb_Mesh23814
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1412,7 +1413,7 @@ GameObject:
   - component: {fileID: 4790935339988041795}
   - component: {fileID: 2083930613557886251}
   - component: {fileID: 8333946102511064614}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Grip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1428,7 +1429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543450653373124543}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1630,7 @@ GameObject:
   - component: {fileID: 2415282356614485609}
   - component: {fileID: 2819875040496529812}
   - component: {fileID: 666755582207905744}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1662,7 +1663,7 @@ GameObject:
   - component: {fileID: 3160042425271909483}
   - component: {fileID: 1559424445165455829}
   - component: {fileID: 6490597183766746921}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Clip1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1718,7 +1719,7 @@ GameObject:
   - component: {fileID: 8634508792880611316}
   - component: {fileID: 5871204228690345682}
   - component: {fileID: 1074077701905626631}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1736,7 +1737,7 @@ GameObject:
   - component: {fileID: 60499632349467962}
   - component: {fileID: 4502360454686299213}
   - component: {fileID: 2606786136076917687}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_FusionSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1918,7 +1919,7 @@ GameObject:
   - component: {fileID: 3950678921939375322}
   - component: {fileID: 283969508998623595}
   - component: {fileID: 2835120003464633414}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: R_Clip2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
