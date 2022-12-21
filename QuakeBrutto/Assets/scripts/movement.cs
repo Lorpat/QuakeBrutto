@@ -18,6 +18,8 @@ public class movement : MonoBehaviour
     Vector3 velocity;
     public bool isGrounded;
 
+    public Health ht;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,29 +28,36 @@ public class movement : MonoBehaviour
 
     void Update() 
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * y;
-
-        characterController.Move(move * speed * Time.deltaTime);
-
-        if(Input.GetButtonDown("Jump") && isGrounded) 
+        if (ht.currentHealth > 0)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); // formula fisica per determinare la velocità necessaria a compiere un salto di una certa altezza
+
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * y;
+
+            characterController.Move(move * speed * Time.deltaTime);
+
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); // formula fisica per determinare la velocità necessaria a compiere un salto di una certa altezza
+            }
         }
     }
 
     void FixedUpdate()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // per controllare se il player tocca terra
+        if (ht.currentHealth > 0)
+        {
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask); // per controllare se il player tocca terra
 
-        if (isGrounded && velocity.y < 0f) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
-        {                                   // si setta a -2f perché è meglio di 0f
-            velocity.y = -2f;
+            if (isGrounded && velocity.y < 0f) // se l'oggetto è a terra, la velocità non deve continuare ad aumentare, quindi viene resettata
+            {                                   // si setta a -2f perché è meglio di 0f
+                velocity.y = -2f;
+            }
+
+            velocity.y += gravity * Time.deltaTime; // moto uniformemente accelerato
+            characterController.Move(velocity * Time.deltaTime);
         }
-
-        velocity.y += gravity * Time.deltaTime; // moto uniformemente accelerato
-        characterController.Move(velocity * Time.deltaTime);
     }
 }
