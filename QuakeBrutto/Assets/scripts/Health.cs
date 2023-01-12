@@ -8,11 +8,16 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public Slider slider;
+
+    public int maxShield = 100;
+    public int currentShield = 0;
+    public Slider shieldSlider;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         slider.value = currentHealth;
+        shieldSlider.value = currentShield; 
     }
 
     // Update is called once per frame
@@ -27,6 +32,10 @@ public class Health : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 Damage(10);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                getShield(10);
             }
         }
     }
@@ -43,7 +52,27 @@ public class Health : MonoBehaviour
 
     void Damage(int damageV)
     {
-        currentHealth -= damageV;
+        if(currentShield >= damageV)
+        {
+            currentShield -= damageV;
+        }
+        else
+        {
+            damageV -= currentShield;
+            currentShield = 0;
+            currentHealth -= damageV;
+        }
         slider.value = currentHealth;
+        shieldSlider.value = currentShield;
+    }
+
+    void getShield(int shieldV)
+    {
+        currentShield += shieldV;
+        if(currentShield > maxShield)
+        {
+            currentShield = maxShield;
+        }
+        shieldSlider.value = currentShield;
     }
 }
