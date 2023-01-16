@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    void Heal(int healV)
+    public void Heal(int healV)
     {
         currentHealth += healV;
         if(currentHealth > maxHealth)
@@ -50,7 +50,7 @@ public class Health : MonoBehaviour
         slider.value = currentHealth;
     }
 
-    void Damage(int damageV)
+    public void Damage(int damageV)
     {
         if(currentShield >= damageV)
         {
@@ -66,7 +66,7 @@ public class Health : MonoBehaviour
         shieldSlider.value = currentShield;
     }
 
-    void getShield(int shieldV)
+    public void getShield(int shieldV)
     {
         currentShield += shieldV;
         if(currentShield > maxShield)
