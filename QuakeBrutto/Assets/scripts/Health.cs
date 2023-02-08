@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100;
+    public float currentHealth;
     public Slider slider;
-
-    public int maxShield = 100;
-    public int currentShield = 0;
+    
+    public float maxShield = 100;
+    public float currentShield = 0;
     public Slider shieldSlider;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,22 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(int healV)
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public float getHealth()
+    {
+        return currentHealth;
+    }
+
+    public void setHealth(float amount)
+    {
+        currentHealth = amount;
+    }
+
+    public void Heal(float healV)
     {
         currentHealth += healV;
         if(currentHealth > maxHealth)
@@ -50,7 +65,7 @@ public class Health : MonoBehaviour
         slider.value = currentHealth;
     }
 
-    public void Damage(int damageV)
+    public void Damage(float damageV)
     {
         if(currentShield >= damageV)
         {
@@ -66,7 +81,7 @@ public class Health : MonoBehaviour
         shieldSlider.value = currentShield;
     }
 
-    public void getShield(int shieldV)
+    public void getShield(float shieldV)
     {
         currentShield += shieldV;
         if(currentShield > maxShield)
