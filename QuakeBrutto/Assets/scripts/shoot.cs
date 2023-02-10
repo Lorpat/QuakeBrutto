@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.scripts
 {
@@ -44,6 +45,7 @@ namespace Assets.scripts
         public Camera fpsCam;
         public ParticleSystem muzzleFlash;
         public float nextTimeToFire = 0f;
+        public Image crossHair;
 
         private void Update()
         {
@@ -68,8 +70,15 @@ namespace Assets.scripts
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damage);
+                    crossHair.color=Color.red;
+                    Invoke("changeToGreen", 0.25f);
                 }
             }
+        }
+
+        private void changeToGreen()
+        {
+            crossHair.color = Color.green;
         }
     }
 }
