@@ -8,16 +8,22 @@ public class Health : MonoBehaviour
     public float maxHealth = 100;
     public float currentHealth;
     public Slider slider;
+    public Text healthText;
     
     public float maxShield = 100;
     public float currentShield = 0;
     public Slider shieldSlider;
+    public Text shieldText;
+
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         slider.value = currentHealth;
-        shieldSlider.value = currentShield; 
+        shieldSlider.value = currentShield;
+        healthText.text = currentHealth.ToString();
+        shieldText.text = currentShield.ToString();
     }
 
     // Update is called once per frame
@@ -53,6 +59,7 @@ public class Health : MonoBehaviour
     public void setHealth(float amount)
     {
         currentHealth = amount;
+        healthText.text = currentHealth.ToString();
     }
 
     public void Heal(float healV)
@@ -62,6 +69,7 @@ public class Health : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        healthText.text = currentHealth.ToString();
         slider.value = currentHealth;
     }
 
@@ -79,6 +87,8 @@ public class Health : MonoBehaviour
         }
         slider.value = currentHealth;
         shieldSlider.value = currentShield;
+        healthText.text = currentHealth.ToString();
+        shieldText.text = currentShield.ToString();
     }
 
     public void getShield(float shieldV)
@@ -89,5 +99,8 @@ public class Health : MonoBehaviour
             currentShield = maxShield;
         }
         shieldSlider.value = currentShield;
+        shieldText.text = currentShield.ToString();
     }
+
+    
 }
